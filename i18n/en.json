@@ -1,0 +1,9 @@
+{
+  "hero":{
+    "home": "Home",
+    "login": "Sign in",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "membership": "Membership"
+  }
+}
