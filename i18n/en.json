@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "VaultChecker — Store-credit control for your business"
+    "title": "VaultChecker, store credit for your business"
   },
   "hero": {
     "home": "Home",
@@ -13,7 +13,7 @@
   "main": {
     "summary": "The store-credit ledger, now digital",
     "catchy": "Manage your store's credit without losing a cent",
-    "highlightedfeature": "VaultChecker computes interest, installments and late fees for you — with the French method and a 360-day basis.",
+    "highlightedfeature": "VaultChecker works out the interest, installments and late fees for you. You record the sale, the app does the math.",
     "btnstart": "Start free"
   },
   "problem": {
@@ -58,20 +58,20 @@
       "text": "Many stores on one platform, each with its own data."
     },
     "card2": {
-      "name": "Nominal & effective rates",
-      "text": "Convert and apply the agreed rate on a 360-day basis."
+      "name": "Interest your way",
+      "text": "Apply the interest you agreed with each customer, no manual math."
     },
     "card3": {
-      "name": "French method",
-      "text": "Equal installments with grace period and automatic capitalization."
+      "name": "Even installments",
+      "text": "Split the debt into equal installments, easy to collect each month."
     },
     "card4": {
-      "name": "Interest & late fees",
-      "text": "Computes late fees by overdue days with the late-fee → interest → principal order."
+      "name": "Late-fee control",
+      "text": "Works out late fees by the days overdue, so nothing slips by."
     },
     "card5": {
-      "name": "Cutoff report",
-      "text": "The statement each customer must pay, ready in one click."
+      "name": "Account statement",
+      "text": "What each customer needs to pay, ready in one click."
     },
     "card6": {
       "name": "Audit log",
@@ -80,8 +80,8 @@
   },
   "team": {
     "title": "Built by engineering students",
-    "summary": "A project for the Finance and Economic Engineering course.",
-    "description": "We built VaultChecker to manage neighborhood store credit with real financial math: rates, installments, late fees and reports."
+    "summary": "Built by students to make store credit simple.",
+    "description": "We built VaultChecker so any business can manage its store credit without hassle or math mistakes."
   },
   "membership": {
     "eyebrow": "Plans",
@@ -124,21 +124,21 @@
   "FAQ": {
     "title": "Frequently asked questions",
     "description": "What people ask us most.",
-    "question1": "What calculation method does it use?",
-    "answer1": "The in-arrears French method, with a 360-day basis and a 30-day commercial month, as financial practice requires.",
-    "question2": "Can I use a nominal or effective rate?",
-    "answer2": "Both. You register the rate agreed per customer and VaultChecker converts and applies it.",
+    "question1": "How does it do the math?",
+    "answer1": "You set the price and the interest you agreed, and VaultChecker figures out the installments and late fees instantly. No formulas, no calculator.",
+    "question2": "Can I set my own interest?",
+    "answer2": "Sure. You set the rate with each customer and the app applies it for you.",
     "question3": "Does it compute late fees?",
-    "answer3": "Yes, by overdue days, and it applies the late-fee → interest → principal order.",
+    "answer3": "Yes, it works it out on its own based on the days overdue.",
     "question4": "Does it work for any business?",
     "answer4": "Yes: grocers, greengrocers, butchers, pharmacies and more. It's multi-store."
   },
   "footer": {
-    "contact": "contact@vaultchecker.pe",
+    "contact": "kapitalwatch@gmail.com",
     "summary": "Store-credit control for your neighborhood business.",
     "explore": "Explore",
     "next": "Ready?",
     "copyright": "© 2026 VaultChecker",
-    "designedFor": "SI642 — Finance and Economic Engineering"
+    "designedFor": "SI642 university project"
   }
 }

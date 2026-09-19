@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "VaultChecker — Control de fiado para tu negocio"
+    "title": "VaultChecker, control de fiado para tu negocio"
   },
   "hero": {
     "home": "Inicio",
@@ -13,7 +13,7 @@
   "main": {
     "summary": "El cuaderno de fiado, ahora digital",
     "catchy": "Controla el crédito de tu bodega sin perder un sol",
-    "highlightedfeature": "VaultChecker calcula intereses, cuotas y moras por ti — con el método francés y base de 360 días.",
+    "highlightedfeature": "VaultChecker saca los intereses, las cuotas y las moras por ti. Tú registras la venta y la app hace las cuentas.",
     "btnstart": "Empezar gratis"
   },
   "problem": {
@@ -58,20 +58,20 @@
       "text": "Varias tiendas en una sola plataforma, cada una con sus datos."
     },
     "card2": {
-      "name": "Tasas nominal y efectiva",
-      "text": "Convierte y aplica la tasa pactada con base de 360 días."
+      "name": "Interés a tu manera",
+      "text": "Aplica el interés que acordaste con cada cliente, sin cálculos a mano."
     },
     "card3": {
-      "name": "Método francés",
-      "text": "Cuotas iguales con período de gracia y capitalización automática."
+      "name": "Cuotas parejas",
+      "text": "Divide la deuda en cuotas iguales, fáciles de cobrar mes a mes."
     },
     "card4": {
-      "name": "Interés y mora",
-      "text": "Calcula la mora por días de atraso con prelación mora → interés → capital."
+      "name": "Control de mora",
+      "text": "Calcula la mora por los días de atraso, sin que se te escape nada."
     },
     "card5": {
-      "name": "Reporte de corte",
-      "text": "El estado de cuenta que cada cliente debe pagar, listo en un clic."
+      "name": "Estado de cuenta",
+      "text": "Lo que cada cliente debe pagar, listo en un clic."
     },
     "card6": {
       "name": "Auditoría",
@@ -80,8 +80,8 @@
   },
   "team": {
     "title": "Hecho por estudiantes de Ingeniería",
-    "summary": "Un proyecto del curso de Finanzas e Ingeniería Económica.",
-    "description": "Construimos VaultChecker para llevar el control del fiado de barrio con matemática financiera real: tasas, cuotas, mora y reportes."
+    "summary": "Hecho por estudiantes para que llevar el fiado sea simple.",
+    "description": "Construimos VaultChecker para que cualquier negocio controle su fiado sin líos ni errores de cuentas."
   },
   "membership": {
     "eyebrow": "Planes",
@@ -124,21 +124,21 @@
   "FAQ": {
     "title": "Preguntas frecuentes",
     "description": "Lo que más nos consultan.",
-    "question1": "¿Qué método de cálculo usa?",
-    "answer1": "El método francés vencido, con base de 360 días y mes comercial de 30, como exige la práctica financiera.",
-    "question2": "¿Puedo usar tasa nominal o efectiva?",
-    "answer2": "Ambas. Registras la tasa pactada por cliente y VaultChecker la convierte y aplica.",
+    "question1": "¿Cómo saca las cuentas?",
+    "answer1": "Tú pones el precio y el interés que acordaste, y VaultChecker calcula las cuotas y la mora al instante. Sin fórmulas ni calculadora.",
+    "question2": "¿Puedo poner el interés que yo quiera?",
+    "answer2": "Claro. Tú defines la tasa con cada cliente y la app la aplica por ti.",
     "question3": "¿Calcula la mora?",
-    "answer3": "Sí, por los días de atraso, y aplica la prelación mora → interés → capital.",
+    "answer3": "Sí, la calcula sola según los días de atraso.",
     "question4": "¿Sirve para cualquier negocio?",
     "answer4": "Sí: bodegas, fruterías, carnicerías, boticas y más. Es multi-tienda."
   },
   "footer": {
-    "contact": "contacto@vaultchecker.pe",
+    "contact": "kapitalwatch@gmail.com",
     "summary": "El control de fiado para tu negocio de barrio.",
     "explore": "Explorar",
     "next": "¿Listo?",
     "copyright": "© 2026 VaultChecker",
-    "designedFor": "Curso SI642 — Finanzas e Ingeniería Económica"
+    "designedFor": "Proyecto universitario SI642"
   }
 }
