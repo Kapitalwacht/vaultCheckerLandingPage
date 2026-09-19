@@ -95,4 +95,49 @@ if (navToggle && header) {
     });
 }
 
+function initGallery(gallery) {
+    const track = gallery.querySelector("[data-track]");
+    const slides = Array.from(track.children);
+    const shots = window.APP_SHOTS || [];
+    slides.forEach((slide, i) => {
+        const img = slide.querySelector("img");
+        if (img && shots[i]) img.src = shots[i];
+    });
+    const dotsBox = gallery.querySelector("[data-dots]");
+    const prev = gallery.querySelector("[data-prev]");
+    const next = gallery.querySelector("[data-next]");
+    let index = 0;
+
+    const dots = slides.map((_, i) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.setAttribute("aria-label", "Slide " + (i + 1));
+        dot.addEventListener("click", () => go(i));
+        dotsBox.appendChild(dot);
+        return dot;
+    });
+
+    function go(i) {
+        index = (i + slides.length) % slides.length;
+        track.style.transform = "translateX(" + (-index * 100) + "%)";
+        dots.forEach((d, di) => d.classList.toggle("is_active", di === index));
+    }
+
+    if (prev) prev.addEventListener("click", () => go(index - 1));
+    if (next) next.addEventListener("click", () => go(index + 1));
+
+    let startX = null;
+    track.addEventListener("pointerdown", (e) => { startX = e.clientX; });
+    track.addEventListener("pointerup", (e) => {
+        if (startX === null) return;
+        const dx = e.clientX - startX;
+        if (Math.abs(dx) > 40) go(index + (dx < 0 ? 1 : -1));
+        startX = null;
+    });
+
+    go(0);
+}
+
+document.querySelectorAll("[data-gallery]").forEach(initGallery);
+
 loadLanguage(currentLanguage());

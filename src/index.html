@@ -131,7 +131,19 @@
                <li data-i18n="team.strength3"></li>
                <li data-i18n="team.strength4"></li>
            </ul>
-           <img class="img_about_the_team" src="../assets/images/team.png" alt="VaultChecker">
+           <div class="app_gallery" data-gallery>
+               <div class="app_gallery_viewport">
+                   <div class="app_gallery_track" data-track>
+                       <div class="app_shot"><img class="app_shot_img" alt="VaultChecker home"></div>
+                       <div class="app_shot"><img class="app_shot_img" alt="VaultChecker customers"></div>
+                       <div class="app_shot"><img class="app_shot_img" alt="VaultChecker payment plan"></div>
+                       <div class="app_shot"><img class="app_shot_img" alt="VaultChecker billing"></div>
+                   </div>
+               </div>
+               <button class="app_gallery_arrow app_gallery_prev" type="button" aria-label="Previous" data-prev>&#8249;</button>
+               <button class="app_gallery_arrow app_gallery_next" type="button" aria-label="Next" data-next>&#8250;</button>
+               <div class="app_gallery_dots" data-dots></div>
+           </div>
        </div>
       </div>
        <div class="section" id="membership">
@@ -241,6 +253,7 @@
                 <p class="designed_for" data-i18n="footer.designedFor"></p>
             </div>
         </div>
+        <script src="app-shots.js"></script>
         <script src="script.js"></script>
     </footer>
 </body>
