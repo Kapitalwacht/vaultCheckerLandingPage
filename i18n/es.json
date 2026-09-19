@@ -7,7 +7,8 @@
     "membership": "Planes",
     "faq": "Preguntas",
     "contact": "Contacto",
-    "login": "Iniciar sesión"
+    "login": "Iniciar sesión",
+    "register": "Crear cuenta"
   },
   "main": {
     "summary": "El cuaderno de fiado, ahora digital",
@@ -52,12 +53,30 @@
     "eyebrow": "Por qué VaultChecker",
     "title": "Todo tu fiado, calculado y ordenado",
     "subtitle": "Pensado para bodegas, fruterías, carnicerías y cualquier negocio de barrio.",
-    "card1": { "name": "Multi-tienda", "text": "Varias tiendas en una sola plataforma, cada una con sus datos." },
-    "card2": { "name": "Tasas nominal y efectiva", "text": "Convierte y aplica la tasa pactada con base de 360 días." },
-    "card3": { "name": "Método francés", "text": "Cuotas iguales con período de gracia y capitalización automática." },
-    "card4": { "name": "Interés y mora", "text": "Calcula la mora por días de atraso con prelación mora → interés → capital." },
-    "card5": { "name": "Reporte de corte", "text": "El estado de cuenta que cada cliente debe pagar, listo en un clic." },
-    "card6": { "name": "Auditoría", "text": "Cada operación queda registrada automáticamente." }
+    "card1": {
+      "name": "Multi-tienda",
+      "text": "Varias tiendas en una sola plataforma, cada una con sus datos."
+    },
+    "card2": {
+      "name": "Tasas nominal y efectiva",
+      "text": "Convierte y aplica la tasa pactada con base de 360 días."
+    },
+    "card3": {
+      "name": "Método francés",
+      "text": "Cuotas iguales con período de gracia y capitalización automática."
+    },
+    "card4": {
+      "name": "Interés y mora",
+      "text": "Calcula la mora por días de atraso con prelación mora → interés → capital."
+    },
+    "card5": {
+      "name": "Reporte de corte",
+      "text": "El estado de cuenta que cada cliente debe pagar, listo en un clic."
+    },
+    "card6": {
+      "name": "Auditoría",
+      "text": "Cada operación queda registrada automáticamente."
+    }
   },
   "team": {
     "title": "Hecho por estudiantes de Ingeniería",
@@ -69,16 +88,37 @@
     "title": "Elige tu plan",
     "subtitle": "Empieza gratis y crece cuando lo necesites.",
     "plan1": {
-      "name": "Barrio", "price": "S/ 0", "period": "/mes", "desc": "Para empezar",
-      "feature1": "1 tienda", "feature2": "Hasta 50 clientes", "feature3": "Cálculo de cuotas", "btn": "Comenzar"
+      "name": "Barrio",
+      "price": "S/ 0",
+      "period": "/mes",
+      "desc": "Para empezar",
+      "feature1": "1 tienda",
+      "feature2": "Hasta 50 clientes",
+      "feature3": "Cálculo de cuotas",
+      "btn": "Comenzar"
     },
     "plan2": {
-      "badge": "Recomendado", "name": "Negocio", "price": "S/ 29", "period": "/mes", "desc": "El más elegido",
-      "feature1": "Hasta 5 tiendas", "feature2": "Clientes ilimitados", "feature3": "Reporte de corte", "feature4": "Auditoría completa", "btn": "Probar"
+      "badge": "Recomendado",
+      "name": "Negocio",
+      "price": "S/ 30",
+      "period": "/mes",
+      "desc": "El más elegido",
+      "feature1": "Hasta 5 tiendas",
+      "feature2": "Clientes ilimitados",
+      "feature3": "Reporte de corte",
+      "feature4": "Auditoría completa",
+      "btn": "Probar"
     },
     "plan3": {
-      "name": "Cadena", "price": "S/ 79", "period": "/mes", "desc": "Para varias tiendas",
-      "feature1": "Tiendas ilimitadas", "feature2": "Roles y permisos", "feature3": "Soporte prioritario", "feature4": "Exportar reportes", "btn": "Contactar"
+      "name": "Cadena",
+      "price": "S/ 75",
+      "period": "/mes",
+      "desc": "Para varias tiendas",
+      "feature1": "Tiendas ilimitadas",
+      "feature2": "Roles y permisos",
+      "feature3": "Soporte prioritario",
+      "feature4": "Exportar reportes",
+      "btn": "Contactar"
     }
   },
   "FAQ": {

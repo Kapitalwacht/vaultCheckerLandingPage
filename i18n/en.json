@@ -7,7 +7,8 @@
     "membership": "Plans",
     "faq": "FAQ",
     "contact": "Contact",
-    "login": "Sign in"
+    "login": "Sign in",
+    "register": "Sign up"
   },
   "main": {
     "summary": "The store-credit ledger, now digital",
@@ -52,12 +53,30 @@
     "eyebrow": "Why VaultChecker",
     "title": "All your store credit, computed and organized",
     "subtitle": "Built for grocers, greengrocers, butchers and any neighborhood business.",
-    "card1": { "name": "Multi-store", "text": "Many stores on one platform, each with its own data." },
-    "card2": { "name": "Nominal & effective rates", "text": "Convert and apply the agreed rate on a 360-day basis." },
-    "card3": { "name": "French method", "text": "Equal installments with grace period and automatic capitalization." },
-    "card4": { "name": "Interest & late fees", "text": "Computes late fees by overdue days with the late-fee → interest → principal order." },
-    "card5": { "name": "Cutoff report", "text": "The statement each customer must pay, ready in one click." },
-    "card6": { "name": "Audit log", "text": "Every operation is recorded automatically." }
+    "card1": {
+      "name": "Multi-store",
+      "text": "Many stores on one platform, each with its own data."
+    },
+    "card2": {
+      "name": "Nominal & effective rates",
+      "text": "Convert and apply the agreed rate on a 360-day basis."
+    },
+    "card3": {
+      "name": "French method",
+      "text": "Equal installments with grace period and automatic capitalization."
+    },
+    "card4": {
+      "name": "Interest & late fees",
+      "text": "Computes late fees by overdue days with the late-fee → interest → principal order."
+    },
+    "card5": {
+      "name": "Cutoff report",
+      "text": "The statement each customer must pay, ready in one click."
+    },
+    "card6": {
+      "name": "Audit log",
+      "text": "Every operation is recorded automatically."
+    }
   },
   "team": {
     "title": "Built by engineering students",
@@ -69,16 +88,37 @@
     "title": "Choose your plan",
     "subtitle": "Start free and grow when you need to.",
     "plan1": {
-      "name": "Corner", "price": "$0", "period": "/mo", "desc": "To get started",
-      "feature1": "1 store", "feature2": "Up to 50 customers", "feature3": "Installment calculation", "btn": "Get started"
+      "name": "Corner",
+      "price": "$0",
+      "period": "/mo",
+      "desc": "To get started",
+      "feature1": "1 store",
+      "feature2": "Up to 50 customers",
+      "feature3": "Installment calculation",
+      "btn": "Get started"
     },
     "plan2": {
-      "badge": "Recommended", "name": "Business", "price": "$29", "period": "/mo", "desc": "Most popular",
-      "feature1": "Up to 5 stores", "feature2": "Unlimited customers", "feature3": "Cutoff report", "feature4": "Full audit log", "btn": "Try it"
+      "badge": "Recommended",
+      "name": "Business",
+      "price": "$8",
+      "period": "/mo",
+      "desc": "Most popular",
+      "feature1": "Up to 5 stores",
+      "feature2": "Unlimited customers",
+      "feature3": "Cutoff report",
+      "feature4": "Full audit log",
+      "btn": "Try it"
     },
     "plan3": {
-      "name": "Chain", "price": "$79", "period": "/mo", "desc": "For several stores",
-      "feature1": "Unlimited stores", "feature2": "Roles and permissions", "feature3": "Priority support", "feature4": "Export reports", "btn": "Contact us"
+      "name": "Chain",
+      "price": "$20",
+      "period": "/mo",
+      "desc": "For several stores",
+      "feature1": "Unlimited stores",
+      "feature2": "Roles and permissions",
+      "feature3": "Priority support",
+      "feature4": "Export reports",
+      "btn": "Contact us"
     }
   },
   "FAQ": {
