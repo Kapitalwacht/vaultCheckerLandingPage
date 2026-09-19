@@ -120,6 +120,56 @@ main{
     border-radius: 20px;
 }
 
+.hero_anim{
+    background-color: transparent;
+    overflow: visible;
+}
+
+.anim_notebook{
+    animation: heroNotebook 8s ease-in-out infinite;
+}
+.anim_phone{
+    opacity: 0;
+    animation: heroPhone 8s ease-in-out infinite;
+}
+.anim_v{
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: heroDrawV 8s ease-in-out infinite;
+}
+.anim_brand{
+    opacity: 0;
+    animation: heroBrand 8s ease-in-out infinite;
+}
+
+@keyframes heroNotebook{
+    0%, 14% { opacity: 1; }
+    24%, 88% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes heroPhone{
+    0%, 16% { opacity: 0; }
+    26%, 88% { opacity: 1; }
+    100% { opacity: 0; }
+}
+@keyframes heroDrawV{
+    0%, 30% { stroke-dashoffset: 200; }
+    52%, 88% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 0; }
+}
+@keyframes heroBrand{
+    0%, 58% { opacity: 0; }
+    70%, 88% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .anim_notebook{ animation: none; opacity: 0; }
+    .anim_phone{ animation: none; opacity: 1; }
+    .anim_v{ animation: none; stroke-dashoffset: 0; }
+    .anim_brand{ animation: none; opacity: 1; }
+}
+
 .main_btns{
     display: flex;
     flex-wrap: wrap;
