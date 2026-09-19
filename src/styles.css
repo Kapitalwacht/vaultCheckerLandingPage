@@ -125,6 +125,13 @@ main{
     overflow: visible;
 }
 
+.anim_notebook,
+.anim_phone,
+.anim_v,
+.anim_brand{
+    transform-box: fill-box;
+    transform-origin: center;
+}
 .anim_notebook{
     animation: heroNotebook 8s ease-in-out infinite;
 }
@@ -143,23 +150,27 @@ main{
 }
 
 @keyframes heroNotebook{
-    0%, 14% { opacity: 1; }
-    24%, 88% { opacity: 0; }
-    100% { opacity: 1; }
+    0% { opacity: 0; transform: rotate(-6deg) scale(0.9); }
+    8%, 14% { opacity: 1; transform: rotate(0deg) scale(1); }
+    22% { opacity: 0; transform: rotate(5deg) scale(1.08); }
+    22.01%, 86% { opacity: 0; }
+    100% { opacity: 1; transform: rotate(-6deg) scale(0.9); }
 }
 @keyframes heroPhone{
-    0%, 16% { opacity: 0; }
-    26%, 88% { opacity: 1; }
-    100% { opacity: 0; }
+    0%, 15% { opacity: 0; transform: scale(0.8); }
+    26% { opacity: 1; transform: scale(1.03); }
+    32%, 86% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.9); }
 }
 @keyframes heroDrawV{
-    0%, 30% { stroke-dashoffset: 200; }
-    52%, 88% { stroke-dashoffset: 0; }
+    0%, 32% { stroke-dashoffset: 200; }
+    54% { stroke-dashoffset: 0; transform: scale(1.12); }
+    60%, 86% { stroke-dashoffset: 0; transform: scale(1); }
     100% { stroke-dashoffset: 0; }
 }
 @keyframes heroBrand{
-    0%, 58% { opacity: 0; }
-    70%, 88% { opacity: 1; }
+    0%, 60% { opacity: 0; transform: translateY(10px); }
+    72%, 86% { opacity: 1; transform: translateY(0); }
     100% { opacity: 0; }
 }
 
