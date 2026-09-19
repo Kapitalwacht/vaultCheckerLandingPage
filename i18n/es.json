@@ -1,0 +1,104 @@
+{
+  "app": {
+    "title": "VaultChecker — Control de fiado para tu negocio"
+  },
+  "hero": {
+    "home": "Inicio",
+    "membership": "Planes",
+    "faq": "Preguntas",
+    "contact": "Contacto",
+    "login": "Iniciar sesión"
+  },
+  "main": {
+    "summary": "El cuaderno de fiado, ahora digital",
+    "catchy": "Controla el crédito de tu bodega sin perder un sol",
+    "highlightedfeature": "VaultChecker calcula intereses, cuotas y moras por ti — con el método francés y base de 360 días.",
+    "btnstart": "Empezar gratis"
+  },
+  "problem": {
+    "section": "El cuaderno de papel ya no da más"
+  },
+  "problem1": {
+    "subtitle": "Cálculos a mano",
+    "description": "Sacar intereses y cuotas con calculadora toma tiempo y se presta a errores.",
+    "phrase": "\"¿Cuánto era con los días de atraso?\"",
+    "numbering": {
+      "title": "Errores",
+      "summary": "8 de 10",
+      "description": "bodegas calculan mal los intereses del fiado."
+    }
+  },
+  "problem2": {
+    "subtitle": "Cuentas dispersas",
+    "description": "Cada cliente en una hoja distinta; nada cuadra a fin de mes.",
+    "phrase": "\"Se me traspapeló la deuda de la vecina.\"",
+    "numbering": {
+      "title": "Tiempo",
+      "summary": "3 h/sem",
+      "description": "perdidas cuadrando el cuaderno."
+    }
+  },
+  "problem3": {
+    "subtitle": "Sin control de mora",
+    "description": "No sabes quién debe, cuánto ni desde cuándo.",
+    "phrase": "\"Pensé que ya me había pagado.\"",
+    "numbering": {
+      "title": "Mora",
+      "summary": "30%",
+      "description": "de la deuda se cobra tarde o nunca."
+    }
+  },
+  "benefits": {
+    "eyebrow": "Por qué VaultChecker",
+    "title": "Todo tu fiado, calculado y ordenado",
+    "subtitle": "Pensado para bodegas, fruterías, carnicerías y cualquier negocio de barrio.",
+    "card1": { "name": "Multi-tienda", "text": "Varias tiendas en una sola plataforma, cada una con sus datos." },
+    "card2": { "name": "Tasas nominal y efectiva", "text": "Convierte y aplica la tasa pactada con base de 360 días." },
+    "card3": { "name": "Método francés", "text": "Cuotas iguales con período de gracia y capitalización automática." },
+    "card4": { "name": "Interés y mora", "text": "Calcula la mora por días de atraso con prelación mora → interés → capital." },
+    "card5": { "name": "Reporte de corte", "text": "El estado de cuenta que cada cliente debe pagar, listo en un clic." },
+    "card6": { "name": "Auditoría", "text": "Cada operación queda registrada automáticamente." }
+  },
+  "team": {
+    "title": "Hecho por estudiantes de Ingeniería",
+    "summary": "Un proyecto del curso de Finanzas e Ingeniería Económica.",
+    "description": "Construimos VaultChecker para llevar el control del fiado de barrio con matemática financiera real: tasas, cuotas, mora y reportes."
+  },
+  "membership": {
+    "eyebrow": "Planes",
+    "title": "Elige tu plan",
+    "subtitle": "Empieza gratis y crece cuando lo necesites.",
+    "plan1": {
+      "name": "Barrio", "price": "S/ 0", "period": "/mes", "desc": "Para empezar",
+      "feature1": "1 tienda", "feature2": "Hasta 50 clientes", "feature3": "Cálculo de cuotas", "btn": "Comenzar"
+    },
+    "plan2": {
+      "badge": "Recomendado", "name": "Negocio", "price": "S/ 29", "period": "/mes", "desc": "El más elegido",
+      "feature1": "Hasta 5 tiendas", "feature2": "Clientes ilimitados", "feature3": "Reporte de corte", "feature4": "Auditoría completa", "btn": "Probar"
+    },
+    "plan3": {
+      "name": "Cadena", "price": "S/ 79", "period": "/mes", "desc": "Para varias tiendas",
+      "feature1": "Tiendas ilimitadas", "feature2": "Roles y permisos", "feature3": "Soporte prioritario", "feature4": "Exportar reportes", "btn": "Contactar"
+    }
+  },
+  "FAQ": {
+    "title": "Preguntas frecuentes",
+    "description": "Lo que más nos consultan.",
+    "question1": "¿Qué método de cálculo usa?",
+    "answer1": "El método francés vencido, con base de 360 días y mes comercial de 30, como exige la práctica financiera.",
+    "question2": "¿Puedo usar tasa nominal o efectiva?",
+    "answer2": "Ambas. Registras la tasa pactada por cliente y VaultChecker la convierte y aplica.",
+    "question3": "¿Calcula la mora?",
+    "answer3": "Sí, por los días de atraso, y aplica la prelación mora → interés → capital.",
+    "question4": "¿Sirve para cualquier negocio?",
+    "answer4": "Sí: bodegas, fruterías, carnicerías, boticas y más. Es multi-tienda."
+  },
+  "footer": {
+    "contact": "contacto@vaultchecker.pe",
+    "summary": "El control de fiado para tu negocio de barrio.",
+    "explore": "Explorar",
+    "next": "¿Listo?",
+    "copyright": "© 2026 VaultChecker",
+    "designedFor": "Curso SI642 — Finanzas e Ingeniería Económica"
+  }
+}

@@ -1,217 +1,238 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>vaultCheckerLandingPage</title>
+    <title data-i18n="app.title">VaultChecker</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <img class="logo" src="assets/images/logo.png">
-            <nav class="hero_nav">
-                <button class="btn_hero_nav" label="btn_home">hero.home</button>
-                <button class="btn_hero_nav" label="btn_membership">hero.membership</button>
-                <button class="btn_hero_nav" label="btn_faq">hero.faq</button>
-                <button class="btn_hero_nav" label="btn_contact">hero.contact</button>
-                <button class="btn_hero_nav" label="btn_login">hero.login</button>
-            </nav>
+        <img class="logo" src="../assets/images/logo-dark.png" alt="VaultChecker">
+        <button class="nav_toggle" type="button" aria-label="Menu" aria-expanded="false" data-nav-toggle>
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="hero_nav">
+            <button class="btn_hero_nav" data-i18n="hero.home" data-target="home"></button>
+            <button class="btn_hero_nav" data-i18n="hero.membership" data-target="membership"></button>
+            <button class="btn_hero_nav" data-i18n="hero.faq" data-target="faq"></button>
+            <button class="btn_hero_nav" data-i18n="hero.contact" data-target="contact"></button>
+            <button class="btn_hero_nav" data-lang-toggle>EN</button>
+            <button class="btn_hero_nav" label="btn_login" data-app-login data-i18n="hero.login"></button>
+        </nav>
     </header>
    <main>
-      <div class="section">
+      <div class="section" id="home">
            <div class="presentation">
-               <p class="short_summary">main.summary</p>
-               <p class="catchy_words">main.catchy</p>
-               <img class="presentation_image" src="assets/images/presentation.png">
-               <p class="highlighted_feature">main.highlightedfeature</p>
+               <p class="short_summary" data-i18n="main.summary"></p>
+               <p class="catchy_words" data-i18n="main.catchy"></p>
+               <svg class="presentation_image" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VaultChecker">
+                   <rect width="260" height="260" rx="20" fill="#16a34a"/>
+                   <rect x="40" y="54" width="180" height="152" rx="14" fill="#ffffff"/>
+                   <rect x="60" y="78" width="90" height="12" rx="6" fill="#16a34a"/>
+                   <rect x="60" y="104" width="140" height="8" rx="4" fill="#d5e6d8"/>
+                   <rect x="60" y="124" width="140" height="8" rx="4" fill="#d5e6d8"/>
+                   <rect x="60" y="144" width="100" height="8" rx="4" fill="#d5e6d8"/>
+                   <rect x="60" y="172" width="70" height="18" rx="9" fill="#16a34a"/>
+                   <circle cx="196" cy="181" r="14" fill="#166534"/>
+                   <path d="M190 181.5l4 4 8-8" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+               </svg>
+               <p class="highlighted_feature" data-i18n="main.highlightedfeature"></p>
                <div class="main_btns">
-                   <button class="btn_start">main.btnstart</button>
+                   <button class="btn_start" data-app-login data-i18n="main.btnstart"></button>
                </div>
            </div>
       </div>
        <div class="section">
-       <p class="problem_section_name">problem.section</p>
+       <p class="problem_section_name" data-i18n="problem.section"></p>
        <div class="problems_row">
            <div class="problem_summary">
-               <h4 class="problem_subtitle">problem1.subtitle</h4>
-               <p class="problem_description">problem1.description</p>
-               <p class="problem_phrase">problem1.phrase</p>
+               <h4 class="problem_subtitle" data-i18n="problem1.subtitle"></h4>
+               <p class="problem_description" data-i18n="problem1.description"></p>
+               <p class="problem_phrase" data-i18n="problem1.phrase"></p>
                <div class="numbering_problems">
-                   <h3 class="random_problem">problem1.numbering.title</h3>
-                   <h1 class="random_problem_summary">problem1.numbering.summary</h1>
-                   <p class="random_problem_description">problem1.numbering.description</p>
+                   <h3 class="random_problem" data-i18n="problem1.numbering.title"></h3>
+                   <h1 class="random_problem_summary" data-i18n="problem1.numbering.summary"></h1>
+                   <p class="random_problem_description" data-i18n="problem1.numbering.description"></p>
                </div>
            </div>
 
            <div class="problem_summary">
-               <h4 class="problem_subtitle">problem2.subtitle</h4>
-               <p class="problem_description">problem2.description</p>
-               <p class="problem_phrase">problem2.phrase</p>
+               <h4 class="problem_subtitle" data-i18n="problem2.subtitle"></h4>
+               <p class="problem_description" data-i18n="problem2.description"></p>
+               <p class="problem_phrase" data-i18n="problem2.phrase"></p>
                <div class="numbering_problems">
-                   <h3 class="random_problem">problem2.numbering.title</h3>
-                   <h1 class="random_problem_summary">problem2.numbering.summary</h1>
-                   <p class="random_problem_description">problem2.numbering.description</p>
+                   <h3 class="random_problem" data-i18n="problem2.numbering.title"></h3>
+                   <h1 class="random_problem_summary" data-i18n="problem2.numbering.summary"></h1>
+                   <p class="random_problem_description" data-i18n="problem2.numbering.description"></p>
                </div>
            </div>
 
            <div class="problem_summary">
-               <h4 class="problem_subtitle">problem3.subtitle</h4>
-               <p class="problem_description">problem3.description</p>
-               <p class="problem_phrase">problem3.phrase</p>
+               <h4 class="problem_subtitle" data-i18n="problem3.subtitle"></h4>
+               <p class="problem_description" data-i18n="problem3.description"></p>
+               <p class="problem_phrase" data-i18n="problem3.phrase"></p>
                <div class="numbering_problems">
-                   <h3 class="random_problem">problem3.numbering.title</h3>
-                   <h1 class="random_problem_summary">problem3.numbering.summary</h1>
-                   <p class="random_problem_description">problem3.numbering.description</p>
+                   <h3 class="random_problem" data-i18n="problem3.numbering.title"></h3>
+                   <h1 class="random_problem_summary" data-i18n="problem3.numbering.summary"></h1>
+                   <p class="random_problem_description" data-i18n="problem3.numbering.description"></p>
                </div>
            </div>
        </div>
        </div>
-      <div class="section">
+      <div class="section" id="benefits">
        <div class="benefits">
-           <p class="benefits_eyebrow">benefits.eyebrow</p>
-           <h2 class="benefits_title">benefits.title</h2>
-           <p class="benefits_subtitle">benefits.subtitle</p>
+           <p class="benefits_eyebrow" data-i18n="benefits.eyebrow"></p>
+           <h2 class="benefits_title" data-i18n="benefits.title"></h2>
+           <p class="benefits_subtitle" data-i18n="benefits.subtitle"></p>
            <div class="benefits_grid">
                <div class="benefit_card">
-                   <h3 class="benefit_name">benefits.card1.name</h3>
-                   <p class="benefit_text">benefits.card1.text</p>
+                   <h3 class="benefit_name" data-i18n="benefits.card1.name"></h3>
+                   <p class="benefit_text" data-i18n="benefits.card1.text"></p>
                </div>
                <div class="benefit_card">
-                   <h3 class="benefit_name">benefits.card2.name</h3>
-                   <p class="benefit_text">benefits.card2.text</p>
+                   <h3 class="benefit_name" data-i18n="benefits.card2.name"></h3>
+                   <p class="benefit_text" data-i18n="benefits.card2.text"></p>
                </div>
                <div class="benefit_card">
-                   <h3 class="benefit_name">benefits.card3.name</h3>
-                   <p class="benefit_text">benefits.card3.text</p>
+                   <h3 class="benefit_name" data-i18n="benefits.card3.name"></h3>
+                   <p class="benefit_text" data-i18n="benefits.card3.text"></p>
                </div>
                <div class="benefit_card">
-                   <h3 class="benefit_name">benefits.card4.name</h3>
-                   <p class="benefit_text">benefits.card4.text</p>
+                   <h3 class="benefit_name" data-i18n="benefits.card4.name"></h3>
+                   <p class="benefit_text" data-i18n="benefits.card4.text"></p>
                </div>
                <div class="benefit_card">
-                   <h3 class="benefit_name">benefits.card5.name</h3>
-                   <p class="benefit_text">benefits.card5.text</p>
+                   <h3 class="benefit_name" data-i18n="benefits.card5.name"></h3>
+                   <p class="benefit_text" data-i18n="benefits.card5.text"></p>
                </div>
                <div class="benefit_card">
-                   <h3 class="benefit_name">benefits.card6.name</h3>
-                   <p class="benefit_text">benefits.card6.text</p>
+                   <h3 class="benefit_name" data-i18n="benefits.card6.name"></h3>
+                   <p class="benefit_text" data-i18n="benefits.card6.text"></p>
                </div>
            </div>
        </div>
       </div>
       <div class="section">
        <div class="about_team">
-           <h1 class="about_team_title">team.title</h1>
-           <h3 class="about_team_summary">team.summary</h3>
-           <p class="about_team_description">team.description</p>
-           <img class="img_about_the_team" src="assets/images/about_team.png">
+           <h1 class="about_team_title" data-i18n="team.title"></h1>
+           <h3 class="about_team_summary" data-i18n="team.summary"></h3>
+           <p class="about_team_description" data-i18n="team.description"></p>
+           <svg class="img_about_the_team" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Team">
+               <rect width="280" height="280" rx="20" fill="#166534"/>
+               <circle cx="105" cy="120" r="34" fill="#86efac"/>
+               <circle cx="175" cy="120" r="34" fill="#bbf7d0"/>
+               <path d="M50 220c0-33 25-56 55-56s55 23 55 56z" fill="#86efac"/>
+               <path d="M120 220c0-33 25-56 55-56s55 23 55 56z" fill="#bbf7d0"/>
+           </svg>
        </div>
       </div>
-       <div class="section">
+       <div class="section" id="membership">
        <div class="membership">
-           <p class="membership_eyebrow">membership.eyebrow</p>
-           <h2 class="membership_title">membership.title</h2>
-           <p class="membership_subtitle">membership.subtitle</p>
+           <p class="membership_eyebrow" data-i18n="membership.eyebrow"></p>
+           <h2 class="membership_title" data-i18n="membership.title"></h2>
+           <p class="membership_subtitle" data-i18n="membership.subtitle"></p>
            <div class="plans_row">
                <div class="plan_card">
-                   <h3 class="plan_name">membership.plan1.name</h3>
-                   <p class="plan_price"><span class="plan_amount">membership.plan1.price</span><span class="plan_period">membership.plan1.period</span></p>
-                   <p class="plan_desc">membership.plan1.desc</p>
+                   <h3 class="plan_name" data-i18n="membership.plan1.name"></h3>
+                   <p class="plan_price"><span class="plan_amount" data-i18n="membership.plan1.price"></span><span class="plan_period" data-i18n="membership.plan1.period"></span></p>
+                   <p class="plan_desc" data-i18n="membership.plan1.desc"></p>
                    <ul class="plan_features">
-                       <li>membership.plan1.feature1</li>
-                       <li>membership.plan1.feature2</li>
-                       <li>membership.plan1.feature3</li>
+                       <li data-i18n="membership.plan1.feature1"></li>
+                       <li data-i18n="membership.plan1.feature2"></li>
+                       <li data-i18n="membership.plan1.feature3"></li>
                    </ul>
-                   <button class="plan_btn">membership.plan1.btn</button>
+                   <button class="plan_btn" data-app-login data-i18n="membership.plan1.btn"></button>
                </div>
 
                <div class="plan_card plan_featured">
-                   <p class="plan_badge">membership.plan2.badge</p>
-                   <h3 class="plan_name">membership.plan2.name</h3>
-                   <p class="plan_price"><span class="plan_amount">membership.plan2.price</span><span class="plan_period">membership.plan2.period</span></p>
-                   <p class="plan_desc">membership.plan2.desc</p>
+                   <p class="plan_badge" data-i18n="membership.plan2.badge"></p>
+                   <h3 class="plan_name" data-i18n="membership.plan2.name"></h3>
+                   <p class="plan_price"><span class="plan_amount" data-i18n="membership.plan2.price"></span><span class="plan_period" data-i18n="membership.plan2.period"></span></p>
+                   <p class="plan_desc" data-i18n="membership.plan2.desc"></p>
                    <ul class="plan_features">
-                       <li>membership.plan2.feature1</li>
-                       <li>membership.plan2.feature2</li>
-                       <li>membership.plan2.feature3</li>
-                       <li>membership.plan2.feature4</li>
+                       <li data-i18n="membership.plan2.feature1"></li>
+                       <li data-i18n="membership.plan2.feature2"></li>
+                       <li data-i18n="membership.plan2.feature3"></li>
+                       <li data-i18n="membership.plan2.feature4"></li>
                    </ul>
-                   <button class="plan_btn plan_btn_featured">membership.plan2.btn</button>
+                   <button class="plan_btn plan_btn_featured" data-app-login data-i18n="membership.plan2.btn"></button>
                </div>
 
                <div class="plan_card">
-                   <h3 class="plan_name">membership.plan3.name</h3>
-                   <p class="plan_price"><span class="plan_amount">membership.plan3.price</span><span class="plan_period">membership.plan3.period</span></p>
-                   <p class="plan_desc">membership.plan3.desc</p>
+                   <h3 class="plan_name" data-i18n="membership.plan3.name"></h3>
+                   <p class="plan_price"><span class="plan_amount" data-i18n="membership.plan3.price"></span><span class="plan_period" data-i18n="membership.plan3.period"></span></p>
+                   <p class="plan_desc" data-i18n="membership.plan3.desc"></p>
                    <ul class="plan_features">
-                       <li>membership.plan3.feature1</li>
-                       <li>membership.plan3.feature2</li>
-                       <li>membership.plan3.feature3</li>
-                       <li>membership.plan3.feature4</li>
+                       <li data-i18n="membership.plan3.feature1"></li>
+                       <li data-i18n="membership.plan3.feature2"></li>
+                       <li data-i18n="membership.plan3.feature3"></li>
+                       <li data-i18n="membership.plan3.feature4"></li>
                    </ul>
-                   <button class="plan_btn">membership.plan3.btn</button>
+                   <button class="plan_btn" data-app-login data-i18n="membership.plan3.btn"></button>
                </div>
            </div>
        </div>
        </div>
-       <div class="section">
+       <div class="section" id="faq">
        <div class="FAQ_section">
-           <h1 class="FAQ_title">FAQ.title</h1>
-           <p class="FAQ_description">FAQ.description</p>
+           <h1 class="FAQ_title" data-i18n="FAQ.title"></h1>
+           <p class="FAQ_description" data-i18n="FAQ.description"></p>
            <div class="FAQ_card">
-               <p class="FAQ_question">FAQ.question1</p>
+               <p class="FAQ_question" data-i18n="FAQ.question1"></p>
                <button class="FAQ_show_text">+</button>
                <span class="FAQ_question_shown">
-                   <p class="FAQ_answer">FAQ.answer1</p>
+                   <p class="FAQ_answer" data-i18n="FAQ.answer1"></p>
                </span>
            </div>
 
 
            <div class="FAQ_card">
-               <p class="FAQ_question">FAQ.question2</p>
+               <p class="FAQ_question" data-i18n="FAQ.question2"></p>
                <button class="FAQ_show_text">+</button>
                <span class="FAQ_question_shown">
-                   <p class="FAQ_answer">FAQ.answer2</p>
+                   <p class="FAQ_answer" data-i18n="FAQ.answer2"></p>
                </span>
            </div>
 
            <div class="FAQ_card">
-               <p class="FAQ_question">FAQ.question3</p>
+               <p class="FAQ_question" data-i18n="FAQ.question3"></p>
                <button class="FAQ_show_text">+</button>
                <span class="FAQ_question_shown">
-                   <p class="FAQ_answer">FAQ.answer3</p>
+                   <p class="FAQ_answer" data-i18n="FAQ.answer3"></p>
                </span>
            </div>
 
            <div class="FAQ_card">
-               <p class="FAQ_question">FAQ.question4</p>
+               <p class="FAQ_question" data-i18n="FAQ.question4"></p>
                <button class="FAQ_show_text">+</button>
                <span class="FAQ_question_shown">
-                   <p class="FAQ_answer">FAQ.answer4</p>
+                   <p class="FAQ_answer" data-i18n="FAQ.answer4"></p>
                </span>
            </div>
        </div>
        </div>
    </main>
-    <footer>
+    <footer id="contact">
         <div class="footer_card">
-            <img class="footer_logo" src="assets/images/logo.png">
-            <p class="footer_info">footer.contact</p>
-            <p class="footer_info">footer.summary</p>
+            <img class="footer_logo" src="../assets/images/logo-dark.png" alt="VaultChecker">
+            <p class="footer_info" data-i18n="footer.contact"></p>
+            <p class="footer_info" data-i18n="footer.summary"></p>
             <div class="footer_shortcuts">
-                <h2 class="footer_explore">footer.explore</h2>
+                <h2 class="footer_explore" data-i18n="footer.explore"></h2>
                 <nav class="footer_explore_nav">
-                    <button class="btn_home">hero.home</button>
-                    <button class="btn_membership">hero.membership</button>
-                    <button class="btn_faq">hero.faq</button>
-                    <button class="btn_contact">hero.contact</button>
+                    <button class="btn_home" data-i18n="hero.home" data-target="home"></button>
+                    <button class="btn_membership" data-i18n="hero.membership" data-target="membership"></button>
+                    <button class="btn_faq" data-i18n="hero.faq" data-target="faq"></button>
+                    <button class="btn_contact" data-i18n="hero.contact" data-target="contact"></button>
                 </nav>
-                <h2 class="footer_next">footer.next</h2>
-                <button class="btn_login">hero.login</button>
+                <h2 class="footer_next" data-i18n="footer.next"></h2>
+                <button class="btn_login" data-app-login data-i18n="hero.login"></button>
             </div>
             <div class="footer_last_division">
-                <p class="copyright">footer.copyright</p>
-                <p class="designed_for">footer.designedFor</p>
+                <p class="copyright" data-i18n="footer.copyright"></p>
+                <p class="designed_for" data-i18n="footer.designedFor"></p>
             </div>
         </div>
         <script src="script.js"></script>

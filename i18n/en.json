@@ -1,9 +1,104 @@
 {
-  "hero":{
+  "app": {
+    "title": "VaultChecker — Store-credit control for your business"
+  },
+  "hero": {
     "home": "Home",
-    "login": "Sign in",
-    "contact": "Contact",
+    "membership": "Plans",
     "faq": "FAQ",
-    "membership": "Membership"
+    "contact": "Contact",
+    "login": "Sign in"
+  },
+  "main": {
+    "summary": "The store-credit ledger, now digital",
+    "catchy": "Manage your store's credit without losing a cent",
+    "highlightedfeature": "VaultChecker computes interest, installments and late fees for you — with the French method and a 360-day basis.",
+    "btnstart": "Start free"
+  },
+  "problem": {
+    "section": "The paper ledger just can't keep up"
+  },
+  "problem1": {
+    "subtitle": "Manual math",
+    "description": "Working out interest and installments by calculator is slow and error-prone.",
+    "phrase": "\"How much was it with the overdue days?\"",
+    "numbering": {
+      "title": "Errors",
+      "summary": "8 of 10",
+      "description": "shops miscalculate store-credit interest."
+    }
+  },
+  "problem2": {
+    "subtitle": "Scattered accounts",
+    "description": "Each customer on a different sheet; nothing adds up at month-end.",
+    "phrase": "\"I misplaced my neighbor's debt.\"",
+    "numbering": {
+      "title": "Time",
+      "summary": "3 h/wk",
+      "description": "lost reconciling the ledger."
+    }
+  },
+  "problem3": {
+    "subtitle": "No late-fee control",
+    "description": "You don't know who owes, how much, or since when.",
+    "phrase": "\"I thought they had already paid me.\"",
+    "numbering": {
+      "title": "Late",
+      "summary": "30%",
+      "description": "of debt is collected late or never."
+    }
+  },
+  "benefits": {
+    "eyebrow": "Why VaultChecker",
+    "title": "All your store credit, computed and organized",
+    "subtitle": "Built for grocers, greengrocers, butchers and any neighborhood business.",
+    "card1": { "name": "Multi-store", "text": "Many stores on one platform, each with its own data." },
+    "card2": { "name": "Nominal & effective rates", "text": "Convert and apply the agreed rate on a 360-day basis." },
+    "card3": { "name": "French method", "text": "Equal installments with grace period and automatic capitalization." },
+    "card4": { "name": "Interest & late fees", "text": "Computes late fees by overdue days with the late-fee → interest → principal order." },
+    "card5": { "name": "Cutoff report", "text": "The statement each customer must pay, ready in one click." },
+    "card6": { "name": "Audit log", "text": "Every operation is recorded automatically." }
+  },
+  "team": {
+    "title": "Built by engineering students",
+    "summary": "A project for the Finance and Economic Engineering course.",
+    "description": "We built VaultChecker to manage neighborhood store credit with real financial math: rates, installments, late fees and reports."
+  },
+  "membership": {
+    "eyebrow": "Plans",
+    "title": "Choose your plan",
+    "subtitle": "Start free and grow when you need to.",
+    "plan1": {
+      "name": "Corner", "price": "$0", "period": "/mo", "desc": "To get started",
+      "feature1": "1 store", "feature2": "Up to 50 customers", "feature3": "Installment calculation", "btn": "Get started"
+    },
+    "plan2": {
+      "badge": "Recommended", "name": "Business", "price": "$29", "period": "/mo", "desc": "Most popular",
+      "feature1": "Up to 5 stores", "feature2": "Unlimited customers", "feature3": "Cutoff report", "feature4": "Full audit log", "btn": "Try it"
+    },
+    "plan3": {
+      "name": "Chain", "price": "$79", "period": "/mo", "desc": "For several stores",
+      "feature1": "Unlimited stores", "feature2": "Roles and permissions", "feature3": "Priority support", "feature4": "Export reports", "btn": "Contact us"
+    }
+  },
+  "FAQ": {
+    "title": "Frequently asked questions",
+    "description": "What people ask us most.",
+    "question1": "What calculation method does it use?",
+    "answer1": "The in-arrears French method, with a 360-day basis and a 30-day commercial month, as financial practice requires.",
+    "question2": "Can I use a nominal or effective rate?",
+    "answer2": "Both. You register the rate agreed per customer and VaultChecker converts and applies it.",
+    "question3": "Does it compute late fees?",
+    "answer3": "Yes, by overdue days, and it applies the late-fee → interest → principal order.",
+    "question4": "Does it work for any business?",
+    "answer4": "Yes: grocers, greengrocers, butchers, pharmacies and more. It's multi-store."
+  },
+  "footer": {
+    "contact": "contact@vaultchecker.pe",
+    "summary": "Store-credit control for your neighborhood business.",
+    "explore": "Explore",
+    "next": "Ready?",
+    "copyright": "© 2026 VaultChecker",
+    "designedFor": "SI642 — Finance and Economic Engineering"
   }
 }
