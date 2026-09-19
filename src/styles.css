@@ -116,6 +116,7 @@ main{
     width: 260px;
     height: 260px;
     object-fit: cover;
+    background-color: #dcfce7;
     border-radius: 20px;
 }
 
@@ -440,6 +441,7 @@ main{
     width: 280px;
     height: 280px;
     object-fit: cover;
+    background-color: #dcfce7;
     border-radius: 20px;
 }
 
