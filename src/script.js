@@ -73,6 +73,13 @@ document.querySelectorAll("[data-app-login]").forEach((button) => {
     });
 });
 
+document.querySelectorAll("[data-app-register]").forEach((button) => {
+    button.addEventListener("click", () => {
+        closeMenu();
+        window.location.href = `${APP_URL}/register`;
+    });
+});
+
 const langToggle = document.querySelector("[data-lang-toggle]");
 if (langToggle) {
     langToggle.addEventListener("click", () => {
