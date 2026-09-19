@@ -79,9 +79,12 @@
     }
   },
   "team": {
-    "title": "Hecho por estudiantes de Ingeniería",
-    "summary": "Hecho por estudiantes para que llevar el fiado sea simple.",
-    "description": "Construimos VaultChecker para que cualquier negocio controle su fiado sin líos ni errores de cuentas."
+    "title": "¿Por qué VaultChecker?",
+    "summary": "Simple, rápido y hecho para el día a día de tu negocio.",
+    "strength1": "Cuentas exactas, sin errores a mano",
+    "strength2": "Rápido y fácil de usar, sin instalar nada",
+    "strength3": "Todo tu fiado en un solo lugar",
+    "strength4": "Cobros y reportes siempre al día"
   },
   "membership": {
     "eyebrow": "Planes",

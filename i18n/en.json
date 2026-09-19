@@ -79,9 +79,12 @@
     }
   },
   "team": {
-    "title": "Built by engineering students",
-    "summary": "Built by students to make store credit simple.",
-    "description": "We built VaultChecker so any business can manage its store credit without hassle or math mistakes."
+    "title": "Why VaultChecker?",
+    "summary": "Simple, fast and built for your day-to-day.",
+    "strength1": "Exact math, no manual mistakes",
+    "strength2": "Fast and easy, nothing to install",
+    "strength3": "All your store credit in one place",
+    "strength4": "Collections and reports always up to date"
   },
   "membership": {
     "eyebrow": "Plans",
