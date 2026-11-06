@@ -2,7 +2,7 @@
 
 Public marketing site for **VaultChecker**, a multi-store platform that digitalises the neighbourhood
 _"cuaderno de fiado"_ (store credit ledger). The page presents the problem, the benefits, the plans
-and the FAQ, and sends visitors to the app to sign in or create an account.
+and the FAQ, and sends visitors to the deployed app to sign in or create an account.
 
 Built with plain **HTML**, **CSS** and **JavaScript**: there are no dependencies and no build step.
 
@@ -54,10 +54,10 @@ language is remembered in `localStorage` under `vc.landing.lang`. To add or chan
 ### Link to the app
 
 The sign-in and sign-up buttons use the `APP_URL` constant at the top of `src/script.js`. It points
-to the app running locally:
+to the deployed app:
 
 ```js
-const APP_URL = "http://localhost:5173";
+const APP_URL = "https://vaultchecker-frontend.web.app";
 ```
 
 ---
