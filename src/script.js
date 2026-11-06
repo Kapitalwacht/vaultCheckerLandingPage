@@ -1,4 +1,4 @@
-const APP_URL = "https://vaultchecker-frontend.web.app";
+const APP_URL = "http://localhost:5173";
 const LANG_KEY = "vc.landing.lang";
 const translations = {};
 
