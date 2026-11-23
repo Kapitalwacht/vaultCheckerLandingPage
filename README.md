@@ -1,10 +1,10 @@
-# VaultChecker — Landing Page
+# VaultChecker Landing Page
 
-Public marketing site for **VaultChecker**, a multi-store platform that digitalises the neighbourhood
+Public marketing site for VaultChecker, a multi-store platform that digitalises the neighbourhood
 paper store credit ledger. The page presents the problem, the benefits, the plans
 and the FAQ, and sends visitors to the deployed app to sign in or create an account.
 
-Built with plain **HTML**, **CSS** and **JavaScript**: there are no dependencies and no build step.
+Built with plain HTML, CSS and JavaScript: there are no dependencies and no build step.
 
 ## Tech stack
 
@@ -45,7 +45,7 @@ vaultCheckerLandingPage/
 
 Elements with a `data-i18n` attribute take their text from the dictionaries in `i18n/`. The chosen
 language is remembered in `localStorage` under `vc.landing.lang`. To add or change a text, update
-**both** `en.json` and `es.json`.
+both `en.json` and `es.json`.
 
 ### Link to the app
 
@@ -68,10 +68,10 @@ python -m http.server 8080
 
 ## Deployment
 
-Published with **GitHub Pages** from `main`:
+Published with GitHub Pages from `main`:
 `https://kapitalwacht.github.io/vaultCheckerLandingPage/src/`.
 
 ## Related repositories
 
-- [VaultCheckerFrontend](https://github.com/Kapitalwacht/VaultCheckerFrontend) — web application
-- [VaultCheckerBackend](https://github.com/Kapitalwacht/VaultCheckerBackend) — REST API
+- [VaultCheckerFrontend](https://github.com/Kapitalwacht/VaultCheckerFrontend): web application
+- [VaultCheckerBackend](https://github.com/Kapitalwacht/VaultCheckerBackend): REST API
