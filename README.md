@@ -1,12 +1,10 @@
 # VaultChecker — Landing Page
 
 Public marketing site for **VaultChecker**, a multi-store platform that digitalises the neighbourhood
-_"cuaderno de fiado"_ (store credit ledger). The page presents the problem, the benefits, the plans
+paper store credit ledger. The page presents the problem, the benefits, the plans
 and the FAQ, and sends visitors to the deployed app to sign in or create an account.
 
 Built with plain **HTML**, **CSS** and **JavaScript**: there are no dependencies and no build step.
-
----
 
 ## Tech stack
 
@@ -17,8 +15,6 @@ Built with plain **HTML**, **CSS** and **JavaScript**: there are no dependencies
 | Behaviour  | Vanilla JavaScript (`src/script.js`, `src/app-shots.js`)   |
 | i18n       | JSON dictionaries loaded at runtime (`i18n/es.json`, `i18n/en.json`) |
 | Hosting    | GitHub Pages                                               |
-
----
 
 ## Project structure
 
@@ -41,7 +37,7 @@ vaultCheckerLandingPage/
 |--------------|---------------|---------------------------------------------|
 | Home         | `#home`       | Value proposition and the problem it solves |
 | Benefits     | `#benefits`   | Benefits and app screenshots                |
-| Plans        | `#membership` | Barrio, Negocio and Cadena                  |
+| Plans        | `#membership` | Corner, Business and Chain                  |
 | FAQ          | `#faq`        | Frequently asked questions                  |
 | Contact      | `#contact`    | Footer and contact details                  |
 
@@ -59,8 +55,6 @@ to the deployed app:
 ```js
 const APP_URL = "https://vaultchecker-frontend.web.app";
 ```
-
----
 
 ## Running locally
 
