@@ -10,6 +10,10 @@
 
     /* derived shades of the core green */
     --vc-green-deep: #0f4d27;
+    --vc-green-night: #051a0d;
+    --vc-green-night-rgb: 5, 26, 13;
+    /* signature gradient: night -> core green (as in the reference) */
+    --vc-grad-core: linear-gradient(160deg, var(--vc-green-night) 0%, var(--vc-green-dark) 100%);
     --vc-green-deeper: #0a3a1d;
     --vc-green-dark-rgb: 22, 101, 52;
     --vc-green-accent-rgb: 22, 163, 74;
@@ -24,6 +28,7 @@
     --vc-text: #3f4f46;
     --vc-muted: #6b7a72;
     --vc-line: #e3ebe6;
+    --vc-surface: #f4f7f5;
     --vc-white: #ffffff;
     --vc-on-dark: rgba(255, 255, 255, 0.92);
     --vc-on-dark-muted: rgba(255, 255, 255, 0.66);
@@ -97,15 +102,30 @@ h1, h2, h3, h4{
     font-weight: 600;
     letter-spacing: 0.02em;
 }
-.short_summary::before,
-.benefits_eyebrow::before,
-.membership_eyebrow::before{
+.short_summary::before{
     content: "";
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background-color: var(--vc-green-accent);
     box-shadow: 0 0 0 4px rgba(var(--vc-green-accent-rgb), 0.22);
+}
+.benefits_eyebrow::before,
+.membership_eyebrow::before{
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, var(--vc-green-accent) 0 3px, transparent 3.5px),
+        var(--vc-grad-core);
+}
+.benefits_eyebrow,
+.membership_eyebrow{
+    color: var(--vc-ink);
+    background-color: var(--vc-surface);
+    border: 1px solid var(--vc-line);
+    text-transform: none;
 }
 
 /* =========================================================
@@ -121,10 +141,10 @@ header{
     gap: 16px 24px;
     min-height: var(--vc-header-h);
     padding: 14px var(--vc-gutter);
-    background-color: rgba(var(--vc-green-dark-rgb), 0.94);
+    background-color: rgba(var(--vc-green-night-rgb), 0.88);
     backdrop-filter: saturate(140%) blur(14px);
     -webkit-backdrop-filter: saturate(140%) blur(14px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .logo{
@@ -246,15 +266,8 @@ main{
     scroll-margin-top: var(--vc-header-h);
 }
 
-.section_dark{
-    background:
-        radial-gradient(ellipse 55% 60% at 85% 0%, rgba(var(--vc-green-accent-rgb), 0.22), transparent 70%),
-        linear-gradient(180deg, var(--vc-green-dark) 0%, var(--vc-green-deep) 100%);
-    color: var(--vc-on-dark);
-}
-
 .section_tint{
-    background-color: var(--vc-green-mist);
+    background-color: var(--vc-white);
 }
 
 /* =========================================================
@@ -262,13 +275,21 @@ main{
    ========================================================= */
 #home{
     padding-top: 88px;
-    padding-bottom: 128px;
+    padding-bottom: 220px;
     overflow: hidden;
     color: var(--vc-white);
     background:
-        radial-gradient(ellipse 45% 55% at 78% 45%, rgba(var(--vc-green-accent-rgb), 0.38), transparent 70%),
-        radial-gradient(ellipse 60% 40% at 0% 100%, rgba(var(--vc-green-accent-rgb), 0.14), transparent 70%),
-        linear-gradient(180deg, var(--vc-green-dark) 0%, var(--vc-green-deep) 100%);
+        radial-gradient(ellipse 40% 45% at 78% 38%, rgba(var(--vc-green-accent-rgb), 0.28), transparent 70%),
+        /* night -> core green; the fade to white only covers the bottom padding */
+        linear-gradient(180deg,
+            var(--vc-green-night) 0%,
+            #0a2b16 18%,
+            var(--vc-green-dark) 52%,
+            var(--vc-green-dark) calc(100% - 250px),
+            #3f7d55 calc(100% - 180px),
+            #a9cbb5 calc(100% - 100px),
+            #e9f2ec calc(100% - 45px),
+            var(--vc-white) 100%);
 }
 
 /* faint grid texture, fades out toward the bottom */
@@ -281,8 +302,8 @@ main{
         linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
     background-size: 64px 64px;
-    -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
-    mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 55%);
+    mask-image: linear-gradient(180deg, #000 0%, transparent 55%);
 }
 
 .presentation{
@@ -508,6 +529,7 @@ main{
    ========================================================= */
 .section_problems{
     gap: 56px;
+    padding-top: 40px;
 }
 
 .problem_section_name{
@@ -586,8 +608,8 @@ main{
     border-radius: var(--vc-radius);
     color: var(--vc-white);
     background:
-        radial-gradient(circle at 100% 0%, rgba(var(--vc-green-accent-rgb), 0.45), transparent 60%),
-        linear-gradient(160deg, var(--vc-green-dark), var(--vc-green-deep));
+        radial-gradient(circle at 100% 0%, rgba(var(--vc-green-accent-rgb), 0.35), transparent 60%),
+        var(--vc-grad-core);
 }
 
 .random_problem{
@@ -611,7 +633,7 @@ main{
 }
 
 /* =========================================================
-   Benefits (dark)
+   Benefits (light, cards with illustrated icon panel)
    ========================================================= */
 .benefits{
     display: flex;
@@ -621,24 +643,16 @@ main{
     gap: 14px;
 }
 
-.benefits_eyebrow{
-    color: var(--vc-on-dark);
-    background-color: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    text-transform: none;
-}
-
 .benefits_title{
     font-size: clamp(30px, 4.4vw, 46px);
     font-weight: 700;
     letter-spacing: -0.03em;
     max-width: 680px;
-    color: var(--vc-white);
 }
 
 .benefits_subtitle{
     font-size: 17px;
-    color: var(--vc-on-dark-muted);
+    color: var(--vc-muted);
     max-width: 540px;
     margin-bottom: 36px;
 }
@@ -655,49 +669,88 @@ main{
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    gap: 10px;
-    padding: 30px 28px 32px;
+    gap: 8px;
+    padding: 24px 24px 20px;
     border-radius: var(--vc-radius-lg);
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.25s, background-color 0.25s, border-color 0.25s;
+    background-color: var(--vc-surface);
+    border: 1px solid transparent;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s, background-color 0.25s;
 }
 
 .benefit_card:hover{
     transform: translateY(-6px);
-    background-color: rgba(255, 255, 255, 0.09);
-    border-color: rgba(var(--vc-green-accent-rgb), 0.85);
+    background-color: var(--vc-white);
+    border-color: var(--vc-line);
+    box-shadow: var(--vc-shadow);
 }
 
+/* illustrated panel at the bottom of the card, with a dark-green icon tile */
 .benefit_icon{
+    order: 3;
+    position: relative;
     display: grid;
     place-items: center;
-    width: 52px;
-    height: 52px;
-    margin-bottom: 10px;
-    border-radius: 16px;
-    background: linear-gradient(145deg, var(--vc-green-accent), var(--vc-green-dark));
-    box-shadow: 0 10px 22px -8px rgba(var(--vc-green-accent-rgb), 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    width: 100%;
+    height: 148px;
+    margin-top: 16px;
+    border-radius: var(--vc-radius);
+    border: 1px solid var(--vc-line);
+    background:
+        radial-gradient(circle, rgba(var(--vc-green-dark-rgb), 0.12) 1px, transparent 1.5px) 0 0 / 16px 16px,
+        var(--vc-white);
+    overflow: hidden;
+}
+.benefit_icon::before{
+    content: "";
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    border-radius: 22px;
+    background: var(--vc-grad-core);
+    box-shadow: 0 18px 32px -12px rgba(var(--vc-green-night-rgb), 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    transform: rotate(-8deg);
+    transition: transform 0.3s;
+}
+.benefit_icon::after{
+    content: "";
+    position: absolute;
+    top: 28px;
+    right: calc(50% - 64px);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 4px solid var(--vc-white);
+    background: var(--vc-green-accent);
+    box-shadow: 0 6px 14px -4px rgba(var(--vc-green-accent-rgb), 0.8);
+}
+.benefit_card:hover .benefit_icon::before{
+    transform: rotate(0deg) scale(1.04);
 }
 .benefit_icon svg{
-    width: 24px;
-    height: 24px;
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
     fill: none;
     stroke: var(--vc-white);
     stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
+    transform: rotate(-8deg);
+    transition: transform 0.3s;
+}
+.benefit_card:hover .benefit_icon svg{
+    transform: rotate(0deg);
 }
 
 .benefit_name{
-    font-size: 19px;
+    font-size: 18.5px;
     font-weight: 700;
-    color: var(--vc-white);
 }
 
 .benefit_text{
     font-size: 15px;
-    color: var(--vc-on-dark-muted);
+    color: var(--vc-muted);
 }
 
 /* =========================================================
@@ -798,8 +851,8 @@ main{
     inset: 40px -40px 30px -40px;
     border-radius: 48px;
     background:
-        radial-gradient(circle at 70% 20%, rgba(var(--vc-green-accent-rgb), 0.35), transparent 60%),
-        linear-gradient(160deg, var(--vc-green-dark), var(--vc-green-deep));
+        radial-gradient(circle at 70% 20%, rgba(var(--vc-green-accent-rgb), 0.3), transparent 60%),
+        var(--vc-grad-core);
 }
 .app_gallery_viewport{
     overflow: hidden;
@@ -937,14 +990,6 @@ main{
     gap: 14px;
 }
 
-.membership_eyebrow{
-    color: var(--vc-green-dark);
-    background-color: var(--vc-white);
-    border: 1px solid var(--vc-line);
-    box-shadow: var(--vc-shadow-sm);
-    text-transform: none;
-}
-
 .membership_title{
     font-size: clamp(30px, 4.4vw, 46px);
     font-weight: 700;
@@ -975,7 +1020,7 @@ main{
     text-align: left;
     gap: 8px;
     padding: 34px 30px 30px;
-    background-color: var(--vc-white);
+    background-color: var(--vc-surface);
     border: 1px solid var(--vc-line);
     border-radius: var(--vc-radius-lg);
     box-shadow: var(--vc-shadow-sm);
@@ -996,8 +1041,8 @@ main{
     color: var(--vc-white);
     border: 1px solid rgba(var(--vc-green-accent-rgb), 0.6);
     background:
-        radial-gradient(circle at 100% 0%, rgba(var(--vc-green-accent-rgb), 0.45), transparent 55%),
-        linear-gradient(165deg, var(--vc-green-dark) 0%, var(--vc-green-deep) 100%);
+        radial-gradient(circle at 100% 0%, rgba(var(--vc-green-accent-rgb), 0.35), transparent 55%),
+        var(--vc-grad-core);
     box-shadow: var(--vc-shadow-lg);
     transform: scale(1.05);
     z-index: 1;
@@ -1128,12 +1173,12 @@ main{
 }
 
 /* =========================================================
-   FAQ (dark)
+   FAQ (light)
    ========================================================= */
 .FAQ_section{
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
     width: 100%;
     max-width: 820px;
     margin: 0 auto;
@@ -1144,13 +1189,12 @@ main{
     font-size: clamp(30px, 4.4vw, 46px);
     font-weight: 700;
     letter-spacing: -0.03em;
-    color: var(--vc-white);
 }
 
 .FAQ_description{
     text-align: center;
     font-size: 17px;
-    color: var(--vc-on-dark-muted);
+    color: var(--vc-muted);
     margin-bottom: 28px;
 }
 
@@ -1160,21 +1204,22 @@ main{
     align-items: center;
     justify-content: space-between;
     gap: 12px 20px;
-    padding: 22px 22px 22px 28px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--vc-white);
+    padding: 20px 20px 20px 28px;
+    background-color: var(--vc-surface);
+    border: 1px solid transparent;
+    color: var(--vc-ink);
     border-radius: var(--vc-radius);
-    transition: background-color 0.25s, border-color 0.25s;
+    transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
 
 .FAQ_card:hover{
-    background-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--vc-line);
 }
 
 .FAQ_card.open{
-    background-color: rgba(255, 255, 255, 0.09);
-    border-color: rgba(var(--vc-green-accent-rgb), 0.85);
+    background-color: var(--vc-white);
+    border-color: var(--vc-line);
+    box-shadow: var(--vc-shadow);
 }
 
 .FAQ_question{
@@ -1191,27 +1236,26 @@ main{
     width: 40px;
     height: 40px;
     flex-shrink: 0;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: none;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.06);
+    background: var(--vc-grad-core);
     color: var(--vc-white);
     font-size: 22px;
     line-height: 1;
     user-select: none;
-    transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+    transition: background 0.2s, transform 0.2s;
 }
 
 .FAQ_show_text:hover,
 .FAQ_card.open .FAQ_show_text{
-    background-color: var(--vc-green-accent);
-    border-color: var(--vc-green-accent);
+    background: var(--vc-green-accent);
 }
 
 .FAQ_question_shown{
     display: none;
     flex-basis: 100%;
     padding-right: 60px;
-    color: var(--vc-on-dark-muted);
+    color: var(--vc-text);
     font-size: 15.5px;
 }
 
@@ -1231,11 +1275,12 @@ main{
 footer{
     position: relative;
     background:
-        radial-gradient(ellipse 50% 70% at 0% 0%, rgba(var(--vc-green-accent-rgb), 0.16), transparent 70%),
-        var(--vc-green-deeper);
+        radial-gradient(ellipse 50% 70% at 0% 0%, rgba(var(--vc-green-accent-rgb), 0.18), transparent 70%),
+        linear-gradient(180deg, var(--vc-green-dark) 0%, #0a2b16 55%, var(--vc-green-night) 100%);
     color: var(--vc-on-dark);
     padding: 80px var(--vc-gutter) 36px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
 }
 
 .footer_card{
@@ -1452,7 +1497,8 @@ footer{
 
 @media (max-width: 800px){
     .section{ padding-top: 80px; padding-bottom: 80px; }
-    #home{ padding-top: 56px; padding-bottom: 88px; text-align: left; }
+    #home{ padding-top: 56px; padding-bottom: 230px; text-align: left; }
+    .section_problems{ padding-top: 24px; }
 
     .presentation,
     .about_team{
