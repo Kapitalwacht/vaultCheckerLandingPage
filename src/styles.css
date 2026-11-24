@@ -10,8 +10,8 @@
 
     /* derived shades of the core green */
     --vc-green-deep: #0f4d27;
-    --vc-green-night: #051a0d;
-    --vc-green-night-rgb: 5, 26, 13;
+    --vc-green-night: #070a08;
+    --vc-green-night-rgb: 7, 10, 8;
     /* signature gradient: night -> core green (as in the reference) */
     --vc-grad-core: linear-gradient(160deg, var(--vc-green-night) 0%, var(--vc-green-dark) 100%);
     --vc-green-deeper: #0a3a1d;
@@ -283,8 +283,9 @@ main{
         /* night -> core green; the fade to white only covers the bottom padding */
         linear-gradient(180deg,
             var(--vc-green-night) 0%,
-            #0a2b16 18%,
-            var(--vc-green-dark) 52%,
+            #0a120d 22%,
+            #0d2616 40%,
+            var(--vc-green-dark) 62%,
             var(--vc-green-dark) calc(100% - 250px),
             #3f7d55 calc(100% - 180px),
             #a9cbb5 calc(100% - 100px),
@@ -1276,7 +1277,7 @@ footer{
     position: relative;
     background:
         radial-gradient(ellipse 50% 70% at 0% 0%, rgba(var(--vc-green-accent-rgb), 0.18), transparent 70%),
-        linear-gradient(180deg, var(--vc-green-dark) 0%, #0a2b16 55%, var(--vc-green-night) 100%);
+        linear-gradient(180deg, var(--vc-green-dark) 0%, #0d2616 45%, var(--vc-green-night) 100%);
     color: var(--vc-on-dark);
     padding: 80px var(--vc-gutter) 36px;
     border-top-left-radius: 40px;
