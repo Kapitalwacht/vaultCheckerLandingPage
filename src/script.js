@@ -1,7 +1,7 @@
 const APP_URL = "https://vaultchecker-frontend.web.app";
 const LANG_KEY = "vc.landing.lang";
 const WHATSAPP_NUMBER = "51942993152";
-const CONTACT_ENDPOINT = "https://formsubmit.co/ajax/kapitalwatch@gmail.com";
+const CONTACT_ENDPOINT = "https://formspree.io/f/xljbaagg";
 const CONTACT_TIMEOUT_MS = 10000;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const translations = {};
@@ -231,7 +231,7 @@ function initContactForm(form) {
             return;
         }
 
-        if (form.elements._honey.value) {
+        if (form.elements._gotcha.value) {
             form.reset();
             setStatus("success", "contact.form.success");
             return;
@@ -253,18 +253,19 @@ function initContactForm(form) {
                     message: fields.message.value.trim(),
                     _replyto: email,
                     _subject: t("contact.form.subject"),
-                    _template: "table",
-                    _captcha: "false",
-                    _honey: ""
+                    _gotcha: ""
                 })
             });
             const data = await response.json().catch(() => ({}));
-            if (!response.ok || String(data.success) !== "true") throw new Error(data.message || "Send failed");
+            if (!response.ok || data.ok !== true) {
+                const details = Array.isArray(data.errors) ? data.errors.map((item) => item.message).join(" ") : "";
+                throw new Error(details || data.error || `Formspree answered with HTTP ${response.status}`);
+            }
             form.reset();
             setStatus("success", "contact.form.success");
         } catch (error) {
             const reason = error.name === "AbortError"
-                ? `No response from FormSubmit after ${CONTACT_TIMEOUT_MS / 1000} s`
+                ? `No response from Formspree after ${CONTACT_TIMEOUT_MS / 1000} s`
                 : error.message;
             console.warn("[contact] Message not sent:", reason);
             setStatus("error", "contact.form.error");
