@@ -70,27 +70,25 @@ chosen language. The number is the `WHATSAPP_NUMBER` constant in `src/script.js`
 ### Contact form
 
 The form asks for name, email and message. It is validated in the browser with translated error
-messages, has a hidden honeypot field (`_honey`) to stop bots, and disables the button while it sends.
+messages, has a hidden honeypot field (`_gotcha`) to stop bots, and disables the button while it sends.
 
-There is no backend: the form is sent with [FormSubmit](https://formsubmit.co), which is free and
-needs no account. `src/script.js` sends a JSON `POST` to the `CONTACT_ENDPOINT` constant:
+There is no backend: the form is sent with [Formspree](https://formspree.io) on its free plan
+(50 submissions per month). `src/script.js` sends a JSON `POST` with `Accept: application/json` to
+the `CONTACT_ENDPOINT` constant:
 
 ```js
-const CONTACT_ENDPOINT = "https://formsubmit.co/ajax/kapitalwatch@gmail.com";
+const CONTACT_ENDPOINT = "https://formspree.io/f/xljbaagg";
 ```
 
-Besides `name`, `email` and `message`, the request includes `_replyto`, `_subject`,
-`_template: "table"` and `_captcha: "false"`.
+Besides `name`, `email` and `message`, the request includes `_replyto` and a translated `_subject`.
+If Formspree does not answer within 10 seconds (`CONTACT_TIMEOUT_MS`), the request is cancelled and
+the form shows the error message. The reason for any failure is logged in the browser console.
 
-### Activating the form
+### Form setup
 
-FormSubmit must be activated once for the receiving address:
-
-1. Open the published page (or the local server) and send a test message from the form.
-2. FormSubmit sends an activation email to `kapitalwatch@gmail.com`.
-3. Open that email and confirm it. Until then no message is delivered.
-
-After activation every message arrives in that inbox, and replying answers the visitor directly.
+The form belongs to the Formspree account of `kapitalwatch@gmail.com`, so messages arrive in that
+inbox and replying answers the visitor directly. To send the messages somewhere else, create a new
+form in Formspree and replace the ID at the end of `CONTACT_ENDPOINT`.
 
 ## Running locally
 
