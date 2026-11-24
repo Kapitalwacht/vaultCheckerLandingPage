@@ -90,7 +90,8 @@ h1, h2, h3, h4{
 /* Shared "eyebrow chip" used by section labels */
 .short_summary,
 .benefits_eyebrow,
-.membership_eyebrow{
+.membership_eyebrow,
+.contact_eyebrow{
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -111,7 +112,8 @@ h1, h2, h3, h4{
     box-shadow: 0 0 0 4px rgba(var(--vc-green-accent-rgb), 0.22);
 }
 .benefits_eyebrow::before,
-.membership_eyebrow::before{
+.membership_eyebrow::before,
+.contact_eyebrow::before{
     content: "";
     width: 16px;
     height: 16px;
@@ -121,7 +123,8 @@ h1, h2, h3, h4{
         var(--vc-grad-core);
 }
 .benefits_eyebrow,
-.membership_eyebrow{
+.membership_eyebrow,
+.contact_eyebrow{
     color: var(--vc-ink);
     background-color: var(--vc-surface);
     border: 1px solid var(--vc-line);
@@ -1271,7 +1274,231 @@ main{
 }
 
 /* =========================================================
-   Footer / Contact (#contact)
+   Contact (#contact): WhatsApp card + message form
+   ========================================================= */
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+}
+
+.contact_title{
+    font-size: clamp(30px, 4.4vw, 46px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    max-width: 680px;
+}
+
+.contact_subtitle{
+    font-size: 17px;
+    color: var(--vc-muted);
+    max-width: 540px;
+    margin-bottom: 36px;
+}
+
+.contact_grid{
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: stretch;
+    gap: 24px;
+    width: 100%;
+    max-width: 1040px;
+}
+
+.contact_card{
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 8px;
+    padding: 34px 30px 30px;
+    background-color: var(--vc-surface);
+    border: 1px solid var(--vc-line);
+    border-radius: var(--vc-radius-lg);
+    box-shadow: var(--vc-shadow-sm);
+}
+
+.contact_whatsapp{
+    color: var(--vc-white);
+    border-color: rgba(var(--vc-green-accent-rgb), 0.6);
+    background:
+        radial-gradient(circle at 100% 0%, rgba(var(--vc-green-accent-rgb), 0.35), transparent 55%),
+        var(--vc-grad-core);
+    box-shadow: var(--vc-shadow-lg);
+}
+
+.contact_icon{
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 10px;
+    border-radius: 18px;
+    background-color: var(--vc-green-accent);
+    box-shadow: 0 12px 26px -10px rgba(var(--vc-green-accent-rgb), 1);
+}
+.contact_icon svg{
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: var(--vc-white);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.contact_card_title{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.contact_card_text{
+    font-size: 15px;
+    color: var(--vc-muted);
+    margin-bottom: 10px;
+}
+.contact_whatsapp .contact_card_text{
+    color: var(--vc-on-dark-muted);
+}
+
+.contact_phone{
+    font-size: clamp(24px, 3vw, 30px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--vc-white);
+    overflow-wrap: anywhere;
+}
+
+.contact_whatsapp_btn,
+.contact_submit{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 14px;
+    font-size: 15.5px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    border-radius: var(--vc-pill);
+    border: 1.5px solid var(--vc-green-accent);
+    background-color: var(--vc-green-accent);
+    color: var(--vc-white);
+    box-shadow: 0 12px 26px -10px rgba(var(--vc-green-accent-rgb), 1);
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.15s, opacity 0.2s;
+}
+.contact_whatsapp_btn{
+    margin-top: auto;
+}
+.contact_whatsapp .contact_phone{
+    margin-bottom: 26px;
+}
+.contact_whatsapp_btn:hover{
+    background-color: var(--vc-white);
+    border-color: var(--vc-white);
+    color: var(--vc-green-dark);
+    transform: translateY(-2px);
+}
+.contact_submit{
+    margin-top: 8px;
+}
+.contact_submit:hover:not(:disabled){
+    background-color: var(--vc-green-dark);
+    border-color: var(--vc-green-dark);
+    transform: translateY(-2px);
+}
+.contact_submit:disabled{
+    cursor: progress;
+    opacity: 0.65;
+    box-shadow: none;
+}
+
+.contact_field{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.contact_label{
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--vc-ink);
+}
+
+.contact_input{
+    width: 100%;
+    padding: 13px 16px;
+    font-family: inherit;
+    font-size: 16px;
+    color: var(--vc-ink);
+    background-color: var(--vc-white);
+    border: 1.5px solid var(--vc-line);
+    border-radius: var(--vc-radius-sm);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.contact_input::placeholder{
+    color: var(--vc-muted);
+}
+.contact_input:focus{
+    outline: none;
+    border-color: var(--vc-green-accent);
+    box-shadow: 0 0 0 4px rgba(var(--vc-green-accent-rgb), 0.18);
+}
+.contact_input[aria-invalid="true"]{
+    border-color: var(--vc-green-deep);
+    background-color: var(--vc-green-mist);
+}
+
+.contact_textarea{
+    min-height: 130px;
+    resize: vertical;
+}
+
+.contact_error{
+    min-height: 1.2em;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--vc-green-deep);
+}
+
+/* honeypot: hidden from people, visible to bots */
+.contact_honey{
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.contact_status{
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+}
+.contact_status:empty{
+    display: none;
+}
+.contact_status.is_success,
+.contact_status.is_error{
+    padding: 12px 16px;
+    border-radius: var(--vc-radius-sm);
+}
+.contact_status.is_success{
+    color: var(--vc-green-dark);
+    background-color: var(--vc-green-soft);
+}
+.contact_status.is_error{
+    color: var(--vc-ink);
+    background-color: var(--vc-white);
+    border: 1.5px solid var(--vc-green-deep);
+}
+
+/* =========================================================
+   Footer
    ========================================================= */
 footer{
     position: relative;
@@ -1548,6 +1775,7 @@ footer{
     }
     .problems_row .problem_summary:last-child{ grid-column: auto; }
     .plans_row{ max-width: 460px; }
+    .contact_grid{ grid-template-columns: 1fr; max-width: 560px; }
     .plan_featured{ transform: none; }
     .plan_featured:hover{ transform: translateY(-6px); }
 
@@ -1563,6 +1791,7 @@ footer{
     .FAQ_card{ padding: 18px 18px 18px 20px; }
     .FAQ_question{ font-size: 16px; }
     .FAQ_question_shown{ padding-right: 0; }
+    .contact_card{ padding: 26px 22px; }
     .footer_contact{ padding: 22px; }
     .footer_mail .footer_info{ font-size: 16px; }
     footer{ padding-top: 64px; }
