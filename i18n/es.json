@@ -136,6 +136,40 @@
     "question4": "¿Sirve para cualquier negocio?",
     "answer4": "Sí: bodegas, fruterías, carnicerías, boticas y más. Es multi-tienda."
   },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Hablemos de tu negocio",
+    "subtitle": "Escríbenos por WhatsApp o déjanos un mensaje y te respondemos pronto.",
+    "whatsapp": {
+      "title": "WhatsApp",
+      "text": "La forma más rápida de resolver tus dudas sobre VaultChecker.",
+      "number": "+51 942 993 152",
+      "btn": "Escribir por WhatsApp",
+      "message": "Hola, quiero más información sobre VaultChecker."
+    },
+    "form": {
+      "title": "Envíanos un mensaje",
+      "text": "Te respondemos al correo que nos dejes.",
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "email": "Correo",
+      "emailPlaceholder": "tucorreo@ejemplo.com",
+      "message": "Mensaje",
+      "messagePlaceholder": "¿En qué te podemos ayudar?",
+      "submit": "Enviar mensaje",
+      "sending": "Enviando...",
+      "success": "¡Gracias! Recibimos tu mensaje y te responderemos pronto.",
+      "error": "No pudimos enviar tu mensaje. Inténtalo de nuevo o escríbenos por WhatsApp.",
+      "subject": "Nuevo mensaje desde la landing de VaultChecker"
+    },
+    "errors": {
+      "nameRequired": "Escribe tu nombre.",
+      "emailRequired": "Escribe tu correo.",
+      "emailInvalid": "Escribe un correo válido.",
+      "messageRequired": "Escribe tu mensaje.",
+      "messageShort": "Tu mensaje debe tener al menos 10 caracteres."
+    }
+  },
   "footer": {
     "contact": "kapitalwatch@gmail.com",
     "summary": "El control de fiado para tu negocio de barrio.",

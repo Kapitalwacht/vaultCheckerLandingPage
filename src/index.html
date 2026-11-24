@@ -245,8 +245,48 @@
            </div>
        </div>
        </div>
+       <div class="section section_contact" id="contact">
+       <div class="contact">
+           <p class="contact_eyebrow" data-i18n="contact.eyebrow"></p>
+           <h2 class="contact_title" data-i18n="contact.title"></h2>
+           <p class="contact_subtitle" data-i18n="contact.subtitle"></p>
+           <div class="contact_grid">
+               <div class="contact_card contact_whatsapp">
+                   <span class="contact_icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.8z"/><path d="M9.5 9.5c0 2.8 2.2 5 5 5l1-1.5-2-1-1 .8a3.5 3.5 0 0 1-1.8-1.8l.8-1-1-2z"/></svg></span>
+                   <h3 class="contact_card_title" data-i18n="contact.whatsapp.title"></h3>
+                   <p class="contact_card_text" data-i18n="contact.whatsapp.text"></p>
+                   <p class="contact_phone" data-i18n="contact.whatsapp.number"></p>
+                   <a class="contact_whatsapp_btn" href="https://wa.me/51942993152" target="_blank" rel="noopener noreferrer" data-whatsapp data-i18n="contact.whatsapp.btn"></a>
+               </div>
+               <form class="contact_card contact_form" novalidate data-contact-form>
+                   <h3 class="contact_card_title" data-i18n="contact.form.title"></h3>
+                   <p class="contact_card_text" data-i18n="contact.form.text"></p>
+                   <div class="contact_field">
+                       <label class="contact_label" for="contact-name" data-i18n="contact.form.name"></label>
+                       <input class="contact_input" id="contact-name" name="name" type="text" autocomplete="name" maxlength="80" required data-i18n-placeholder="contact.form.namePlaceholder">
+                       <p class="contact_error" id="contact-name-error" aria-live="polite"></p>
+                   </div>
+                   <div class="contact_field">
+                       <label class="contact_label" for="contact-email" data-i18n="contact.form.email"></label>
+                       <input class="contact_input" id="contact-email" name="email" type="email" autocomplete="email" maxlength="120" required data-i18n-placeholder="contact.form.emailPlaceholder">
+                       <p class="contact_error" id="contact-email-error" aria-live="polite"></p>
+                   </div>
+                   <div class="contact_field">
+                       <label class="contact_label" for="contact-message" data-i18n="contact.form.message"></label>
+                       <textarea class="contact_input contact_textarea" id="contact-message" name="message" rows="5" maxlength="2000" required data-i18n-placeholder="contact.form.messagePlaceholder"></textarea>
+                       <p class="contact_error" id="contact-message-error" aria-live="polite"></p>
+                   </div>
+                   <div class="contact_honey" aria-hidden="true">
+                       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+                   </div>
+                   <button class="contact_submit" type="submit" data-contact-submit data-i18n="contact.form.submit"></button>
+                   <p class="contact_status" role="status" aria-live="polite" data-contact-status></p>
+               </form>
+           </div>
+       </div>
+       </div>
    </main>
-    <footer id="contact">
+    <footer>
         <div class="footer_card">
             <div class="footer_brand">
                 <img class="footer_logo" src="../assets/images/logo-dark.png" alt="VaultChecker">

@@ -1,5 +1,9 @@
 const APP_URL = "https://vaultchecker-frontend.web.app";
 const LANG_KEY = "vc.landing.lang";
+const WHATSAPP_NUMBER = "51942993152";
+const CONTACT_ENDPOINT = "https://formspree.io/f/xljbaagg";
+const CONTACT_TIMEOUT_MS = 10000;
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const translations = {};
 
 const header = document.querySelector("header");
@@ -15,6 +19,19 @@ function resolveKey(dict, key) {
     return key.split(".").reduce((value, part) => (value == null ? value : value[part]), dict);
 }
 
+function t(key) {
+    const lang = document.documentElement.lang;
+    const text = resolveKey(translations[lang] || {}, key);
+    return typeof text === "string" ? text : "";
+}
+
+function updateWhatsAppLinks() {
+    const message = t("contact.whatsapp.message");
+    document.querySelectorAll("[data-whatsapp]").forEach((link) => {
+        link.href = `https://wa.me/${WHATSAPP_NUMBER}` + (message ? `?text=${encodeURIComponent(message)}` : "");
+    });
+}
+
 function applyLanguage(lang) {
     const dict = translations[lang];
     if (!dict) return;
@@ -23,6 +40,11 @@ function applyLanguage(lang) {
         const text = resolveKey(dict, element.getAttribute("data-i18n"));
         if (typeof text === "string") element.textContent = text;
     });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        const text = resolveKey(dict, element.getAttribute("data-i18n-placeholder"));
+        if (typeof text === "string") element.setAttribute("placeholder", text);
+    });
+    updateWhatsAppLinks();
     const toggle = document.querySelector("[data-lang-toggle]");
     if (toggle) toggle.textContent = lang === "es" ? "EN" : "ES";
     try {
@@ -139,5 +161,122 @@ function initGallery(gallery) {
 }
 
 document.querySelectorAll("[data-gallery]").forEach(initGallery);
+
+function setMessage(element, key) {
+    if (key) {
+        element.setAttribute("data-i18n", key);
+        element.textContent = t(key);
+    } else {
+        element.removeAttribute("data-i18n");
+        element.textContent = "";
+    }
+}
+
+function initContactForm(form) {
+    const submit = form.querySelector("[data-contact-submit]");
+    const status = form.querySelector("[data-contact-status]");
+    const fields = {
+        name: form.elements.name,
+        email: form.elements.email,
+        message: form.elements.message
+    };
+
+    function validateField(name) {
+        const value = fields[name].value.trim();
+        let error = "";
+        if (name === "name" && !value) error = "contact.errors.nameRequired";
+        if (name === "email") {
+            if (!value) error = "contact.errors.emailRequired";
+            else if (!EMAIL_PATTERN.test(value)) error = "contact.errors.emailInvalid";
+        }
+        if (name === "message") {
+            if (!value) error = "contact.errors.messageRequired";
+            else if (value.length < 10) error = "contact.errors.messageShort";
+        }
+        const input = fields[name];
+        const errorBox = document.getElementById(input.id + "-error");
+        if (error) {
+            input.setAttribute("aria-invalid", "true");
+            input.setAttribute("aria-describedby", errorBox.id);
+        } else {
+            input.removeAttribute("aria-invalid");
+            input.removeAttribute("aria-describedby");
+        }
+        setMessage(errorBox, error);
+        return !error;
+    }
+
+    function setStatus(type, key) {
+        status.classList.toggle("is_success", type === "success");
+        status.classList.toggle("is_error", type === "error");
+        setMessage(status, key);
+    }
+
+    Object.keys(fields).forEach((name) => {
+        fields[name].addEventListener("input", () => {
+            if (fields[name].hasAttribute("aria-invalid")) validateField(name);
+        });
+        fields[name].addEventListener("blur", () => {
+            if (fields[name].value.trim()) validateField(name);
+        });
+    });
+
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        setStatus("", "");
+        const results = Object.keys(fields).map(validateField);
+        if (results.includes(false)) {
+            const firstInvalid = form.querySelector("[aria-invalid='true']");
+            if (firstInvalid) firstInvalid.focus();
+            return;
+        }
+
+        if (form.elements._gotcha.value) {
+            form.reset();
+            setStatus("success", "contact.form.success");
+            return;
+        }
+
+        submit.disabled = true;
+        setMessage(submit, "contact.form.sending");
+        const email = fields.email.value.trim();
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), CONTACT_TIMEOUT_MS);
+        try {
+            const response = await fetch(CONTACT_ENDPOINT, {
+                method: "POST",
+                signal: controller.signal,
+                headers: { "Content-Type": "application/json", Accept: "application/json" },
+                body: JSON.stringify({
+                    name: fields.name.value.trim(),
+                    email: email,
+                    message: fields.message.value.trim(),
+                    _replyto: email,
+                    _subject: t("contact.form.subject"),
+                    _gotcha: ""
+                })
+            });
+            const data = await response.json().catch(() => ({}));
+            if (!response.ok || data.ok !== true) {
+                const details = Array.isArray(data.errors) ? data.errors.map((item) => item.message).join(" ") : "";
+                throw new Error(details || data.error || `Formspree answered with HTTP ${response.status}`);
+            }
+            form.reset();
+            setStatus("success", "contact.form.success");
+        } catch (error) {
+            const reason = error.name === "AbortError"
+                ? `No response from Formspree after ${CONTACT_TIMEOUT_MS / 1000} s`
+                : error.message;
+            console.warn("[contact] Message not sent:", reason);
+            setStatus("error", "contact.form.error");
+        } finally {
+            clearTimeout(timer);
+            submit.disabled = false;
+            setMessage(submit, "contact.form.submit");
+        }
+    });
+}
+
+document.querySelectorAll("[data-contact-form]").forEach(initContactForm);
 
 loadLanguage(currentLanguage());

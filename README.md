@@ -27,7 +27,7 @@ vaultCheckerLandingPage/
 └── src/
     ├── index.html      # The landing page
     ├── styles.css      # Styles
-    ├── script.js       # Menu, language switch and links to the app
+    ├── script.js       # Menu, language switch, links to the app and contact form
     └── app-shots.js    # App screenshots shown in the carousel
 ```
 
@@ -39,11 +39,12 @@ vaultCheckerLandingPage/
 | Benefits     | `#benefits`   | Benefits and app screenshots                |
 | Plans        | `#membership` | Corner, Business and Chain                  |
 | FAQ          | `#faq`        | Frequently asked questions                  |
-| Contact      | `#contact`    | Footer and contact details                  |
+| Contact      | `#contact`    | WhatsApp card and contact form              |
 
 ### Languages
 
-Elements with a `data-i18n` attribute take their text from the dictionaries in `i18n/`. The chosen
+Elements with a `data-i18n` attribute take their text from the dictionaries in `i18n/`, and
+inputs with `data-i18n-placeholder` take their placeholder from them. The chosen
 language is remembered in `localStorage` under `vc.landing.lang`. To add or change a text, update
 both `en.json` and `es.json`.
 
@@ -55,6 +56,39 @@ to the deployed app:
 ```js
 const APP_URL = "https://vaultchecker-frontend.web.app";
 ```
+
+## Contact section
+
+The `#contact` section sits between the FAQ and the footer. The menu and the footer links scroll to it.
+
+### WhatsApp
+
+The WhatsApp card links to `https://wa.me/51942993152` (+51 942 993 152) and opens in a new tab. The
+prefilled message comes from `contact.whatsapp.message` in the dictionaries, so it follows the
+chosen language. The number is the `WHATSAPP_NUMBER` constant in `src/script.js`.
+
+### Contact form
+
+The form asks for name, email and message. It is validated in the browser with translated error
+messages, has a hidden honeypot field (`_gotcha`) to stop bots, and disables the button while it sends.
+
+There is no backend: the form is sent with [Formspree](https://formspree.io) on its free plan
+(50 submissions per month). `src/script.js` sends a JSON `POST` with `Accept: application/json` to
+the `CONTACT_ENDPOINT` constant:
+
+```js
+const CONTACT_ENDPOINT = "https://formspree.io/f/xljbaagg";
+```
+
+Besides `name`, `email` and `message`, the request includes `_replyto` and a translated `_subject`.
+If Formspree does not answer within 10 seconds (`CONTACT_TIMEOUT_MS`), the request is cancelled and
+the form shows the error message. The reason for any failure is logged in the browser console.
+
+### Form setup
+
+The form belongs to the Formspree account of `kapitalwatch@gmail.com`, so messages arrive in that
+inbox and replying answers the visitor directly. To send the messages somewhere else, create a new
+form in Formspree and replace the ID at the end of `CONTACT_ENDPOINT`.
 
 ## Running locally
 
