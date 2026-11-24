@@ -2,6 +2,7 @@ const APP_URL = "https://vaultchecker-frontend.web.app";
 const LANG_KEY = "vc.landing.lang";
 const WHATSAPP_NUMBER = "51942993152";
 const CONTACT_ENDPOINT = "https://formsubmit.co/ajax/kapitalwatch@gmail.com";
+const CONTACT_TIMEOUT_MS = 10000;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const translations = {};
 
@@ -239,9 +240,12 @@ function initContactForm(form) {
         submit.disabled = true;
         setMessage(submit, "contact.form.sending");
         const email = fields.email.value.trim();
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), CONTACT_TIMEOUT_MS);
         try {
             const response = await fetch(CONTACT_ENDPOINT, {
                 method: "POST",
+                signal: controller.signal,
                 headers: { "Content-Type": "application/json", Accept: "application/json" },
                 body: JSON.stringify({
                     name: fields.name.value.trim(),
@@ -259,8 +263,13 @@ function initContactForm(form) {
             form.reset();
             setStatus("success", "contact.form.success");
         } catch (error) {
+            const reason = error.name === "AbortError"
+                ? `No response from FormSubmit after ${CONTACT_TIMEOUT_MS / 1000} s`
+                : error.message;
+            console.warn("[contact] Message not sent:", reason);
             setStatus("error", "contact.form.error");
         } finally {
+            clearTimeout(timer);
             submit.disabled = false;
             setMessage(submit, "contact.form.submit");
         }
